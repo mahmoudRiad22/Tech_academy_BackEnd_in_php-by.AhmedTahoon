@@ -3,7 +3,14 @@ $_GET['id'] = 2;
 $_GET['name'] = "mahmoud";
 $_GET['email'] = "makofenris@gmail.com";
 $_GET['phone'] = "01147557761";
-var_dump($_GET);
+
+            $name = "mahmoud";
+            $user_name = "Mahmoud Riad22";
+            $Email = "mahmoudriad027@gmail.com";
+            $phone = "0403338803";
+            $about = urlencode("Iam still learing stuff about this php things");
+            $newtag = urlencode(htmlspecialchars("<MAHMOUD>"));
+
 ?>  
 <!DOCTYPE html>
 <hmtl lang = "en">
@@ -17,10 +24,19 @@ var_dump($_GET);
     <body>
         <h1>Welcome to the HOME page</h1>
         <a href="http://localhost/ProjectsRoom/BlogSystem/Prep-Lectures/login.php">
-            <b>LOGIN</b></a>
+            <b><h1>LOGIN</h1></b></a>
 
-            <h1>Download</h1>
+        <a href="http://localhost/ProjectsRoom/BlogSystem/Prep-Lectures/contact.php
+        ?name=<?=$name?>&username=<?=$user_name?>&email=<?=$Email?>&
+        phone=<?=$phone?>&about=<?=$about?>&newtag=<?=$newtag?>">
+            <h1>Contact</h1></a>
+
+        <a href="http://localhost/ProjectsRoom/BlogSystem/Prep-Lectures/session.php">
+            <h1>Session</h1></a>
         <a href="http://localhost/ProjectsRoom/BlogSystem/Prep-Lectures/header.php">
-            Click Here To Download</a>
+            <h1>Download</h1></a>
+
+        <a href="http://localhost/ProjectsRoom/BlogSystem/Prep-Lectures/cookies.php">
+            <h1>cookies</h1></a>
     </body>
     </hmtl>

@@ -9,13 +9,27 @@
     </head>  
     <body>
         <h1>Welcome to the Contact page</h1>
-        <h2>Your Name is: </h2>
-        <h3>your E-mail is: </h3>
-        <h4>your phone is: </h4>
+        <h2>Your Name is:   <?=$_GET['name']?> </h2>
+        <h3>your Username is:  <?=$_GET['username']?></h3>
+        <h3>your E-mail is:  <?=$_GET['email']?></h3>
+        <h3>your phone is:  <?=$_GET['phone']?></h3>
+        <h3>something about you:    <?=$_GET['about']?></h3>
+        <h3>here is a special tag: <?=$_GET['newtag']?></h3>
+        <h2>Extra INFO: </h2><br><br>
+        <?php
+        session_start();
+        echo $_SESSION['myfavcolor'].'<br>';
+        echo $_SESSION['newmail'].'<br>';
+        echo $_SESSION['homephone'].'<br>';
+
+        ?>
+
     </body>
     </hmtl>
 
-    <?php
-    //var_dump($_GET);
-    ?>
+<?php 
+var_dump($_POST);
+echo $_POST['name'];
+echo $_POST['password'];
 
+?>    
