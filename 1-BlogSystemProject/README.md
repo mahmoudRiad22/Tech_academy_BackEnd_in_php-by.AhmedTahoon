@@ -1,1 +1,1 @@
-# This is a README file for the projects FOLDER
+# This is a README file for the BLOGSYSTEM project
