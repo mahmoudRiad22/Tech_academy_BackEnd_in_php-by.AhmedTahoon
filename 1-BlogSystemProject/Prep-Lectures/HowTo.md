@@ -239,5 +239,90 @@ echo $_POST['password'];
 
     </html>
 ```
+#############################################################################
+#################################### SESSION ################################
+### the session conatin information that can be seen from every page in the project and its terminated once the website is closed
 
+#### to interacte with the data saved in the global variable $_SESSION u MUST 
+#### Start a session regardless if u are adding or reading this data
+#### to start a session u type
+``` session_start();```
+#### then after that u either add or access the data
+### here is an Example:
+```
+<?php
+//this code will start a session save some data the redirect to a new page where u can access these data
+
+session_start();
+
+$_SESSION['myfavcolor'] = "My Fav Color is: blue!!";
+$_SESSION['newmail'] = "My New Email is: makofenris@gmail.com";
+$_SESSION['homephone'] = "My Home Phone is: 04033388803";
+
+header("Location: http://localhost/ProjectsRoom/BlogSystem/Prep-Lectures/sessionpage.php");
+?>
+```
+### Acess the data in another page aka file
+```
+<!DOCTYPE html>
+<hmtl lang = "en">
+
+    <head>
+        <meta charset="UTF-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>Document</title>
+    </head>  
+    <body>
+        <h2>EXTRA INFO: </h2>
+        <?php
+        session_start();
+        echo $_SESSION['myfavcolor'].'<br>';
+        echo $_SESSION['newmail'].'<br>';
+        echo $_SESSION['homephone'].'<br>';
+        ?>
+    </body>
+    </hmtl>
+```
+### or u can access it in another page called contact
+```
+<!DOCTYPE html>
+<hmtl lang = "en">
+
+    <head>
+        <meta charset="UTF-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>Document</title>
+    </head>  
+    <body>
+        <h1>Welcome to the Contact page</h1>
+        <h2>Your Name is:   <?=$_GET['name']?> </h2>
+        <h3>your Username is:  <?=$_GET['username']?></h3>
+        <h3>your E-mail is:  <?=$_GET['email']?></h3>
+        <h3>your phone is:  <?=$_GET['phone']?></h3>
+        <h3>something about you:    <?=$_GET['about']?></h3>
+        <h3>here is a special tag: <?=$_GET['newtag']?></h3>
+        <h2>Extra INFO: </h2><br><br>
+        <?php
+        session_start();
+        echo $_SESSION['myfavcolor'].'<br>';
+        echo $_SESSION['newmail'].'<br>';
+        echo $_SESSION['homephone'].'<br>';
+
+        ?>
+
+    </body>
+    </hmtl>
+
+<?php 
+var_dump($_POST);
+echo $_POST['name'];
+echo $_POST['password'];
+
+?>    
+
+```
+#################################################################
+## By this we will be done with the pre lectures and tomorrow we will start with the BLOGSYSTEM Project
 
