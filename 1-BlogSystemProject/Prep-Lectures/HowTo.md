@@ -188,5 +188,56 @@ echo $_POST['password'];
 #############################################################################
 ################################### COOKIE ##################################
 
+### cookies are a file that is created once u open a website
+### this file is temp depending on the expiration time set
+#### assuming u have a code for the home page as this 
+```
+<body>
+        <h1>Welcome to the HOME page</h1>
+        <a href="http://localhost/ProjectsRoom/BlogSystem/Prep-Lectures/login.php">
+            <b><h1>LOGIN</h1></b></a>
+
+        <a href="http://localhost/ProjectsRoom/BlogSystem/Prep-Lectures/header.php">
+            <h1>Download</h1></a>
+
+        <a href="http://localhost/ProjectsRoom/BlogSystem/Prep-Lectures/cookies.php">
+            <h1>cookies</h1></a>
+    </body>
+```
+
+#### then u clicked on cookies and the cookies page that contain this code
+```
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <title>Cookies</title>
+    </head>
+
+    <body>
+            <?php
+            $info = "last time loggeed in".time();
+            $infoArray = array( 'name'=>'Name: mahmoud', 
+                                'Email'=>'Email: mahmoudriad027@gmail.com',
+                                'phone'=>'phone: 01023258052',
+                                'lastLog'=>"LastLog:".time());
+                setcookie('Lastlogged', $info, time() + (1*60*60),);
+                setcookie('Info', json_encode($infoArray), time()+(1*24*60*60));
+
+                if(isset($_COOKIE['Info']))
+                {
+                    $value_decoded = json_decode($_COOKIE['Info']);
+                    foreach($value_decoded as $element)
+                    {
+                        echo $element.'<br>';
+                    }
+                }
+        ?>
+
+        <h2><?= $_COOKIE['Lastlogged']?></h2>
+        <h2><?= $_COOKIE['Info']?></h2>
+    </body>
+
+    </html>
+```
 
 
